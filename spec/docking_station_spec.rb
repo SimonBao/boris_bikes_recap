@@ -13,5 +13,14 @@ describe DockingStation do
       expect(bike.working?).to be true
     end
   end
+
+  describe '#dock_bike' do
+    it { is_expected.to respond_to :dock_bike }
+    it 'returns stored bike' do
+      bike = Bike.new
+      subject.dock_bike(bike)
+      expect(subject.bike).to eq bike
+    end
+  end
   
 end
